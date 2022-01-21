@@ -1,0 +1,193 @@
+.desc {
+  padding-top: 75px;
+  padding-bottom: 150px;
+
+  @media (max-width: 1150px) {
+    padding-bottom: 90px;
+  }
+
+  @media (max-width: 900px) {
+    padding-top: 50px;
+    padding-bottom: 75px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
+
+.desc__title {
+  @include max-width(595px);
+  font-size: 60px;
+  line-height: 1.35;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'Cormorant';
+  font-style: italic;
+  color: white;
+  font-weight: normal;
+  margin-bottom: 31px;
+  position: relative;
+
+  @media (max-width: 650px) {
+    font-size: 28px !important;
+    margin-bottom: 15px;
+  }
+
+  &::before {
+    z-index: -1;
+    position: absolute;
+    left: -391px;
+    top: -182px;
+    content: url('/src/img/desc-confeti.png');
+
+    @media (max-width: 1270px) {
+      content: none;
+    }
+  }
+
+  &::after {
+    z-index: -1;
+    position: absolute;
+    right: -1431px;
+    top: -308px;
+    content: url('/src/img/desc-img.webp');
+
+    @media (max-width: 1150px) {
+      right: -1233px;
+    }
+
+    @media (max-width: 900px) {
+      content: none;
+    }
+  }
+
+  span {
+    background-color: #f92056;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  b {
+    font-weight: 600;
+    color: black;
+    background-color: #fed3ed;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.desc__text {
+  @include max-width(713px);
+  font-size: 21px;
+  font-weight: 300;
+  margin-bottom: 140px;
+
+  @media (max-width: 760px) {
+    margin-bottom: 110px;
+  }
+
+  @media (max-width: 713px) {
+    br {
+      display: none;
+    }
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: 20px;
+    font-size: 15px !important;
+  }
+
+  b {
+    font-weight: 600;
+  }
+}
+
+.desc__list {
+  @include reset-list;
+  display: flex;
+  gap: 70px;
+  align-items: center;
+  margin-bottom: 68px;
+
+  @media (max-width: 760px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 650px) {
+    gap: 40px;
+  }
+}
+
+.desc__item {
+  font-size: 16px;
+  font-weight: 300;
+  position: relative;
+
+  @media (max-width: 760px) {
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 650px) {
+    padding-left: 107px;
+    br {
+      display: none;
+    }
+    margin-bottom: 0;
+    font-size: 15px !important;
+  }
+
+  &::before {
+    transform: scale(0.5);
+    position: absolute;
+    @include bg;
+
+    @media (max-width: 650px) {
+      transform: scale(0.45);
+    }
+  }
+
+  &:nth-child(1)::before {
+    left: -60px;
+    top: -125px;
+    content: url('/src/img/icons/desc/1.png');
+
+    @media (max-width: 650px) {
+      left: -64px;
+      top: -45px;
+    }
+  }
+
+  &:nth-child(2)::before {
+    left: -58px;
+    top: -131px;
+    content: url('/src/img/icons/desc/2.png');
+
+    @media (max-width: 650px) {
+      left: -51px;
+      top: -57px;
+    }
+  }
+
+  &:nth-child(3)::before {
+    left: -60px;
+    top: -150px;
+    content: url('/src/img/icons/desc/3.png');
+
+    @media (max-width: 650px) {
+      left: -38px;
+      top: -65px;
+    }
+  }
+
+  b {
+    font-weight: 600;
+  }
+}

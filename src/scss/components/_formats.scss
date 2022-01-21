@@ -1,0 +1,147 @@
+.formats {
+  @include bg;
+  min-height: 937px;
+  background-image: url('/src/img/bgs/formats-bg.jpg');
+  padding-top: 10px;
+  padding-bottom: 140px;
+}
+
+.formats__title {
+  @include title;
+  @include max-width(493px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 55px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: url('/src/img/formats-img-left.png');
+    left: -1042px;
+    top: -333px;
+
+    @media (max-width: 1320px) {
+      content: none;
+    }
+  }
+}
+
+.formats__text {
+  @include max-width(647px);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  margin-bottom: 53px;
+  text-align: center;
+
+  @include tablet-mb(40px);
+  @include mobile-mb(20px);
+}
+
+.formats__list {
+  @include reset-list;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: url('/src/img/formats-img-right.png');
+    right: -391px;
+    top: 212px;
+
+    @media (max-width: 1320px) {
+      content: none;
+    }
+  }
+}
+
+.formats__item {
+  @include max-width(555px);
+  padding-top: 17px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 32px;
+  box-shadow: 0px 13px 53.6px 3.4px rgba(0, 0, 0, 0.14);
+  background-color: white;
+  position: relative;
+  border-radius: 10px;
+  min-height: 540px;
+
+  @media (max-width: 650px) {
+    padding-bottom: 20px;
+    min-height: auto;
+  }
+}
+
+.formats__item-bg {
+  position: absolute;
+  @include x-align;
+  width: calc(100% - 40px);
+  border-radius: 10px;
+  bottom: -11px;
+  height: 100%;
+  z-index: -1;
+  background-color: white;
+}
+
+.formats__item-text-box {
+  padding-left: 30px;
+  padding-right: 20px;
+
+  @media (max-width: 650px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.formats__item-img {
+  width: 100%;
+  display: block;
+  margin-bottom: 30px;
+
+  @include mobile-mb(20px);
+}
+
+.formats__item-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.formats__item-text {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+
+  @include mobile-mb(20px);
+}
+
+.formats__item-list {
+  @include reset-list;
+}
+
+.formats__item-item {
+  padding-left: 25px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 13px;
+
+  &::before {
+    @include bg;
+    content: '';
+    background-image: url('/src/img/icons/check.png');
+    width: 15px;
+    height: 11px;
+    position: absolute;
+    left: 0px;
+    top: 4px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
