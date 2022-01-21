@@ -1,0 +1,123 @@
+.exp {
+  background-color: #fefefe;
+  position: relative;
+  padding-top: 109px;
+
+  @media (max-width: 991px) {
+    padding-top: 0;
+  }
+}
+
+.exp__title {
+  @include title;
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: url('/src/img/exp-confeti.png');
+    left: -217px;
+    top: -204px;
+
+    @media (max-width: 650px) {
+      content: '';
+    }
+  }
+}
+
+.exp__text {
+  @include max-width(754px);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 18px;
+  color: #2e2e2e;
+  margin-bottom: 60px;
+
+  @include tablet-mb(40px);
+  @include mobile-mb(20px);
+}
+
+.exp__list {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.exp__item {
+  min-height: 400px;
+  border-radius: 5px;
+
+  &:nth-child(1) {
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    @include max-width(360px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 29px;
+    padding-bottom: 50px;
+    padding-right: 10px;
+    background-image: url('/src/img/gallery/exp-bg/1.png');
+  }
+  &:nth-child(2) {
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    @include max-width(750px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 25px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    background-image: url('/src/img/gallery/exp-bg/2.png');
+
+    @media (max-width: 650px) {
+      padding-right: 10px;
+      padding-bottom: 50px;
+      padding-left: 29px;
+
+      p {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+  &:nth-child(3) {
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    @include max-width(750px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 29px;
+    padding-bottom: 31px;
+    padding-right: 10px;
+    background-image: url('/src/img/gallery/exp-bg/3.png');
+  }
+
+  &:nth-child(4) {
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    @include max-width(360px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 29px;
+    padding-bottom: 31px;
+    padding-right: 10px;
+    background-image: url('/src/img/gallery/exp-bg/4.png');
+  }
+}
+
+.exp__item-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #fefefe;
+}
