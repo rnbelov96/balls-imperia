@@ -1,3 +1,64 @@
 .part {
-  min-height: 3000px;
+  min-height: 1190px;
+  padding-top: 55px;
+  padding-bottom: 145px;
+  @include bg;
+  background-image: url('/src/img/bgs/part-bg.jpg');
+
+  @media (max-width: 991px) {
+    padding-top: 40px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+  }
+}
+
+.part__text {
+  @include max-width(759px);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  margin-bottom: 73px;
+
+  @include tablet-mb(40px);
+  @include mobile-mb(20px);
+}
+
+.part__list-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 31px;
+}
+
+.part__list {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-bottom: 90px;
+  position: relative;
+
+  @media (max-width: 650px) {
+    gap: 30px;
+  }
+
+  &::after {
+    position: absolute;
+    // content: url('/src/img/part-confeti.png');
+    z-index: -1;
+    bottom: -546px;
+    left: -220px;
+
+    @media (max-width: 950px) {
+      content: none;
+    }
+  }
+
+  @include tablet-mb(50px);
+  @include mobile-mb(30px);
 }

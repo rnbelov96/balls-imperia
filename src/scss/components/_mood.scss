@@ -1,0 +1,49 @@
+.mood {
+  @include bg;
+  min-height: 1067px;
+  background-image: url('/src/img/bgs/mood-bg-1.jpg');
+  padding-top: 70px;
+
+  @media (max-width: 890px) {
+    background-position-x: -617px;
+  }
+
+  @media (max-width: 750px) {
+    background-position-x: -712px;
+  }
+
+  @media (max-width: 650px) {
+    background-position-x: -869px;
+    min-height: 819px;
+    padding-top: 30px;
+  }
+}
+
+.mood__content {
+  @include max-width(439px);
+  margin-left: auto;
+  position: relative;
+
+  &::before {
+    content: url('/src/img/')
+  }
+}
+
+.mood__title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 37px;
+
+  @include mobile-mb(20px);
+
+  span {
+    color: $blue;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 18px !important;
+  }
+}

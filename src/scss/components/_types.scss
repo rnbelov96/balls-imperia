@@ -1,0 +1,136 @@
+.types {
+  padding-top: 94px;
+  padding-bottom: 90px;
+
+  @media (max-width: 991px) {
+  padding-bottom: 50px;
+  }
+
+  @media (max-width: 800px) {
+    padding-top: 20px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
+}
+
+.types__title {
+  @include title;
+  margin-bottom: 78px;
+  text-align: left;
+
+  @media (max-width: 800px) {
+    text-align: center;
+  }
+}
+
+.types__text-box {
+  @include max-width(647px);
+  margin-bottom: 128px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: url('/src/img/types-img.png');
+    right: -1037px;
+    top: -315px;
+    z-index: -1;
+
+    @media (max-width: 1000px) {
+      right: -850px;
+    }
+
+    @media (max-width: 800px) {
+      content: none;
+    }
+  }
+
+  @include tablet-mb(60px);
+  @include mobile-mb(20px);
+}
+
+.types__text {
+  font-size: 18px;
+  margin-bottom: 20px;
+
+  &:first-child {
+    @include max-width(590px);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.types__list {
+  @include reset-list;
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.types__item {
+  @include max-width(264px);
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 13px 53.6px 3.4px rgba(0, 0, 0, 0.14);
+  background-color: white;
+  padding-top: 25px;
+  min-height: 396px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      background-image: url('/src/img/gallery/types/#{$i}.jpg');
+    }
+  }
+}
+
+.types__item-line {
+  position: absolute;
+  @include central-align;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border-radius: 10px;
+  border: 2px #e4e4e4 solid;
+  pointer-events: none;
+}
+
+.types__item-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  min-height: 66px;
+}
+
+.types__item-info-box {
+  margin-bottom: 8px;
+}
+
+.types__item-number-title {
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.types__item-number {
+  position: relative;
+  top: -3px;
+  width: 151px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0;
+  background-image: url('/src/img/type-bg.jpg');
+}
