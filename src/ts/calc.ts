@@ -6,11 +6,20 @@ const rightColor = '#ffffff';
 
 const rangeElList = document.querySelectorAll('.js-range');
 
-const rentRange = document.querySelector('.js-rent-range') as HTMLInputElement;
-const trainingRange = document.querySelector(
-  '.js-training-range',
+const girlsRange = document.querySelector('.js-girls-range') as HTMLInputElement;
+const corpRange = document.querySelector(
+  '.js-corp-range',
 ) as HTMLInputElement;
-const roomRange = document.querySelector('.js-room-range') as HTMLInputElement;
+const birthRange = document.querySelector('.js-birth-range') as HTMLInputElement;
+
+const yaselRangeLineEl = document.querySelector(
+  '.js-yasel-line',
+) as HTMLDivElement;
+const oldRangeLineEl = document.querySelector('.js-old-line') as HTMLDivElement;
+const youngRangeLineEl = document.querySelector(
+  '.js-young-line',
+) as HTMLDivElement;
+const dopRangeLineEl = document.querySelector('.js-dop-line') as HTMLDivElement;
 
 const resultLabelEl = document.querySelector(
   '.js-calc-result',
@@ -23,8 +32,8 @@ let adultsCurrentStep = 2;
 let kidsCurrentStep = 2;
 
 const calcResult = () => {
-  result = (Number(rentRange.value) * 4500 + Number(trainingRange.value) * 10500)
-    * Number(roomRange.value);
+  result = (Number(girlsRange.value) * 4500 + Number(corpRange.value) * 10500)
+    * Number(birthRange.value);
   resultLabelEl.textContent = result.toLocaleString();
   return result;
 };
@@ -45,7 +54,7 @@ rangeElList.forEach(el => {
   )}%, ${rightColor} 100%)`;
 });
 
-rentRange.addEventListener('input', e => {
+girlsRange.addEventListener('input', e => {
   const rangeEl = e.currentTarget as HTMLInputElement;
 
   const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
@@ -61,7 +70,7 @@ rentRange.addEventListener('input', e => {
   calcResult();
 });
 
-trainingRange.addEventListener('input', e => {
+corpRange.addEventListener('input', e => {
   const rangeEl = e.currentTarget as HTMLInputElement;
 
   const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
@@ -77,7 +86,7 @@ trainingRange.addEventListener('input', e => {
   calcResult();
 });
 
-roomRange.addEventListener('input', e => {
+birthRange.addEventListener('input', e => {
   const rangeEl = e.currentTarget as HTMLInputElement;
 
   const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
