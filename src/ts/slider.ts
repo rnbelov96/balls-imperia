@@ -178,6 +178,10 @@ const swipeEnd = () => {
     if (currentImage === 0) {
       currentImage = imagesLength;
     }
+    navItemList[currentImage - 1].classList.add('slider__nav-item_active');
+    navItemList[prevCurrentImage - 1].classList.remove(
+      'slider__nav-item_active',
+    );
   }
 
   if (offset > translateStep / 8) {
@@ -186,6 +190,10 @@ const swipeEnd = () => {
     if (currentImage === imagesLength + 1) {
       currentImage = 1;
     }
+    navItemList[currentImage - 1].classList.add('slider__nav-item_active');
+    navItemList[prevCurrentImage - 1].classList.remove(
+      'slider__nav-item_active',
+    );
   }
 
   if (currentImage === imagesLength) {
@@ -276,6 +284,11 @@ prevBtnEl.addEventListener('click', () => {
     }, 500);
   }
 
+  navItemList[currentImage - 1].classList.add('slider__nav-item_active');
+  navItemList[prevCurrentImage - 1].classList.remove(
+    'slider__nav-item_active',
+  );
+
   imgBgElList[currentImage + 3].classList.add('visually-hidden');
   imagesItemElList[currentImage + 3].classList.add('slider__img-item_current');
 
@@ -326,6 +339,11 @@ nextBtnEl.addEventListener('click', () => {
       imagesItemElList[4 + imagesLength].classList.remove('slider__img-item_current');
     }, 500);
   }
+
+  navItemList[currentImage - 1].classList.add('slider__nav-item_active');
+  navItemList[prevCurrentImage - 1].classList.remove(
+    'slider__nav-item_active',
+  );
 
   imgBgElList[currentImage + 3].classList.add('visually-hidden');
   imagesItemElList[currentImage + 3].classList.add('slider__img-item_current');
