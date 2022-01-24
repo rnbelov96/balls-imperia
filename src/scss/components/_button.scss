@@ -18,6 +18,12 @@
   overflow: hidden;
   position: relative;
 
+  &_calc {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &_desc {
     @media (max-width: 760px) {
       display: block;
