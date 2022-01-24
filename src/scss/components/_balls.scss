@@ -7,6 +7,34 @@
   z-index: 2;
 }
 
+.balls__income-ball-box-left {
+  position: relative;
+  left: 208px;
+  top: -797px;
+
+  @media (max-width: 1500px) {
+    left: 244px;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.balls__income-ball-box-right {
+  position: relative;
+  right: -1615px;
+  top: -248px;
+
+  @media (max-width: 1500px) {
+    right: -1553px;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
 .balls__exp-ball-box {
   position: relative;
   left: 165px;

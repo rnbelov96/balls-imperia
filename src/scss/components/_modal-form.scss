@@ -11,7 +11,7 @@
   z-index: 1;
 
   @media (max-width: 650px) {
-  padding: 20px;
+    padding: 20px;
   }
 
   &_part {
@@ -77,6 +77,28 @@
   padding-left: 78px;
   padding-right: 10px;
   position: relative;
+
+  &::before {
+    width: 28px;
+    height: 36px;
+    background-position: left center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    content: '';
+    left: 38px;
+    @include y-align;
+
+    @media (max-width: 650px) {
+      left: 21px;
+    }
+  }
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i})::before {
+      background-image: url('/src/img/icons/form/#{$i}.png');
+    }
+  }
 
   @media (max-width: 650px) {
     padding-left: 60px;

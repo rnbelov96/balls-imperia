@@ -1,0 +1,169 @@
+.income {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 85px;
+
+  @media (max-width: 991px) {
+    padding-top: 0;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-bottom: 30px;
+    top: -30px;
+    margin-bottom: -30px;
+  }
+}
+
+.income__title {
+  @include max-width(812px);
+  @include title;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+
+  @include tablet-mb(35px);
+  @include mobile-mb(20px);
+}
+
+.income__text {
+  text-align: center;
+  @include max-width(470px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+
+  @include tablet-mb(30px);
+  @include mobile-mb(20px);
+}
+
+.income__list {
+  @include reset-list;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+  flex-wrap: wrap;
+
+  @media (max-width: 860px) {
+    justify-content: center;
+  }
+
+  &:first-child {
+    margin-bottom: 54px;
+
+    @media (max-width: 860px) {
+      margin-bottom: 30px;
+    }
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      content: url('/src/img/income-money.png');
+      left: 50%;
+      transform: translateX(-45%);
+      top: 25px;
+
+      @media (max-width: 1150px) {
+        zoom: 0.8;
+      }
+
+      @media (max-width: 950px) {
+        zoom: 0.7;
+      }
+
+      @media (max-width: 860px) {
+        content: none;
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 124px;
+
+    @media (max-width: 860px) {
+      margin-bottom: 30px;
+    }
+
+    .income__item {
+      &:first-child {
+        position: relative;
+        left: 36px;
+
+        @media (max-width: 860px) {
+          left: 0px;
+        }
+      }
+
+      &:last-child {
+        position: relative;
+        right: 36px;
+
+        @media (max-width: 860px) {
+          right: 0px;
+        }
+      }
+    }
+  }
+}
+
+.income__item {
+  @include max-width(271px);
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 13px 53.6px 3.4px rgba(0, 0, 0, 0.14);
+  background-image: linear-gradient(to top, #fed3ed, #fee9f6);
+  min-height: 158px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-image: url('/src/img/icons/check-black.png'),
+      linear-gradient(to bottom, #f8e884, #ffca00);
+    background-position: center;
+    background-size: 14px 10px, 27px 27px;
+    background-repeat: no-repeat;
+    left: 29px;
+    top: -7px;
+    z-index: 2;
+  }
+}
+
+.income__item-line {
+  @include central-align;
+  position: absolute;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border: 1.5px solid white;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.income__item-text {
+  position: relative;
+  font-size: 18px;
+  margin-bottom: 0;
+
+  b {
+    font-size: 20px;
+  }
+}
+
+.income__note {
+  @include max-width(692px);
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 18px;
+}

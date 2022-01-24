@@ -13,7 +13,7 @@
   }
 
   @media (max-width: 650px) {
-    background-position-x: -869px;
+    background-position-x: -820px;
     min-height: 819px;
     padding-top: 30px;
   }
@@ -25,7 +25,14 @@
   position: relative;
 
   &::before {
-    content: url('/src/img/')
+    content: url('/src/img/mood-confeti.png');
+    position: absolute;
+    left: -910px;
+    top: -38px;
+
+    @media (max-width: 870px) {
+      content: none;
+    }
   }
 }
 
