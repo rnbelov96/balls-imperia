@@ -53,6 +53,36 @@
   padding-right: 46px;
   padding-bottom: 51px;
   position: relative;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: url('/src/img/calc-confeti.png');
+    left: -212px;
+    top: -332px;
+
+    @media (max-width: 1150px) {
+      left: -304px;
+      top: -391px;
+    }
+
+    @media (max-width: 650px) {
+      content: none;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: url('/src/img/calc-money.png');
+    left: -272px;
+    top: -150px;
+
+    @media (max-width: 1320px) {
+      content: none;
+    }
+  }
+
   @media (max-width: 1150px) {
     @include max-width(600px);
     padding-left: 20px;

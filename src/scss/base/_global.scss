@@ -1,10 +1,12 @@
-html p, li {
+html p,
+li {
   @media (max-width: 650px) {
     font-size: 16px !important;
   }
 }
 
-html h1, h2 {
+html h1,
+h2 {
   @media (max-width: 650px) {
     font-size: 22px !important;
   }
@@ -27,6 +29,14 @@ main {
   z-index: 1;
   max-width: 1140px;
   margin: 0 auto;
+
+  &_franch {
+    max-width: 1170px;
+
+    @media (max-width: 1190px) {
+      padding: 0 30px;
+    }
+  }
 
   @media (max-width: 1150px) {
     padding: 0 30px;
