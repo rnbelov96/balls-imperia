@@ -52,8 +52,8 @@
 
 .stats__item {
   @include max-width(360px);
+  @include bg;
   min-height: 402px;
-  background-color: grey;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -62,6 +62,23 @@
   padding-bottom: 30px;
   padding-right: 20px;
   border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 13px 53.58px 3.42px rgba(0, 0, 0, 0.14);
+
+  &::before {
+    z-index: 0;
+    position: absolute;
+    bottom: -179px;
+    left: -227px;
+    content: url('/src/img/cloud.png');
+  }
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      background-image: url('/src/img/gallery/stats/#{$i}.jpg');
+    }
+  }
 }
 
 .stats__item-text {
@@ -71,6 +88,7 @@
   color: white;
   min-height: 110px;
   margin-bottom: 0;
+  position: relative;
 
   @media (max-width: 805px) {
     min-height: auto;

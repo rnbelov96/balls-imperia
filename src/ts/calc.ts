@@ -26,8 +26,8 @@ let corpCurrentStep = 4;
 let birthCurrentStep = 4;
 
 const calcResult = () => {
-  result = (Number(girlsRange.value) * 4500 + Number(corpRange.value) * 10500 + Number(birthRange.value) * 4500)
-    * 0.01;
+  result = (Number(girlsRange.value) * 2000 + Number(corpRange.value) * 2000 + Number(birthRange.value) * 2000)
+    * 0.25;
   resultLabelEl.textContent = result.toLocaleString();
   return result;
 };

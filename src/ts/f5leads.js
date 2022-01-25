@@ -27,7 +27,10 @@ const validateForm = form => {
 
   if (
     phoneInputEl.value !== ''
-    && !validator.isMobilePhone(`${phoneInputEl.value.replace(/\(|\)|-|_|\s/g, '')}`, 'ru-RU')
+    && !validator.isMobilePhone(
+      `${phoneInputEl.value.replace(/\(|\)|-|_|\s/g, '')}`,
+      'ru-RU',
+    )
   ) {
     phoneInputEl.classList.add('input-error');
     isOk = false;
@@ -134,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const formsList = document.querySelectorAll('form');
 
   formsList.forEach(form => {
-    form.addEventListener('submit', async e => {
+    form.addEventListener('submit', e => {
       e.preventDefault();
       if (!validateForm(form)) {
         return;
@@ -147,64 +150,35 @@ document.addEventListener('DOMContentLoaded', () => {
         ...objectifyForm([...new FormData(form).entries()]),
       };
 
-      if (document.formData.name === undefined) document.formData.name = window.location.hostname;
+      if (document.formData.name === undefined) { document.formData.name = window.location.hostname; }
 
       // fetch(
       //   `welcomemail.php?name=${document.formData.name}&email=${document.formData.email}`,
       // ).then(data => data.text().then(text => console.log(text)));
 
-      // const bitrixData = {
-      //   email: document.formData.email,
-      //   phone: document.formData.phone,
-      //   city: document.formData.city,
-      //   name: document.formData.name,
-      // };
-      // let bitrixFormBody = [];
-      // Object.keys(bitrixData).forEach(key => {
-      //   const encodedKey = encodeURIComponent(key);
-      //   const encodedValue = encodeURIComponent(bitrixData[key]);
-      //   bitrixFormBody.push(`${encodedKey}=${encodedValue}`);
-      // });
-      // bitrixFormBody = bitrixFormBody.join('&');
-      // await fetch(
-      //   'bitrix/index.php',
-      //   {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-      //     },
-      //     body: bitrixFormBody,
-      //   },
-      // );
-
       const data = JSON.stringify(document.formData);
 
-      const response = await fetch(
-        'https://f5leads.franch5.ru/add_lead',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache',
-          },
-          body: data,
+      fetch('https://f5leads.franch5.ru/add_lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache',
         },
-      );
-
-      if (!response.ok) {
-        window.location = 'error.html';
-        return;
-      }
-
-      if (
-        document.f5leads.expect_second_form === '1'
-        && form.classList.contains('secondform')
-      ) {
-        if (document.f5leads.onSubmitSecondForm !== undefined) document.f5leads.onSubmitSecondForm(form);
-      } else {
-        localStorage.lastFirstFormData = JSON.stringify(document.formData);
-        if (document.f5leads.onSubmitFirstForm !== undefined) document.f5leads.onSubmitFirstForm(form);
-      }
+        body: data,
+      }).then(response => {
+        if (!response.ok) {
+          window.location = 'error.html';
+        }
+        if (
+          document.f5leads.expect_second_form === '1'
+          && form.classList.contains('secondform')
+        ) {
+          if (document.f5leads.onSubmitSecondForm !== undefined) { document.f5leads.onSubmitSecondForm(form); }
+        } else {
+          localStorage.lastFirstFormData = JSON.stringify(document.formData);
+          if (document.f5leads.onSubmitFirstForm !== undefined) { document.f5leads.onSubmitFirstForm(form); }
+        }
+      });
     });
   });
 });

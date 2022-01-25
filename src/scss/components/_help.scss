@@ -1,0 +1,114 @@
+.help {
+  padding-bottom: 55px;
+  padding-top: 30px;
+}
+
+.help__title {
+  @include title;
+  @include max-width(792px);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 68px;
+
+  @include tablet-mb(45px);
+  @include mobile-mb(20px);
+}
+
+.help__text {
+  @include max-width(867px);
+  margin-bottom: 105px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  @include tablet-mb(60px);
+  @include mobile-mb(40px);
+}
+
+.help__list {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.help__item {
+  @include max-width(360px);
+  min-height: 441px;
+  border-radius: 20px;
+  box-shadow: -0.1px 5px 26.2px 5.8px rgba(17, 17, 17, 0.09);
+  background-color: white;
+  margin-bottom: 40px;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-bottom: 20px;
+  padding-top: 200px;
+
+  @for $i from 1 through 7 {
+    &:nth-child(#{$i}) .help__item-title::before {
+      content: url('/src/img/gallery/help/#{$i}.jpg');
+    }
+  }
+
+  &:last-child {
+    @include max-width(750px);
+    background-color: #ebebeb;
+    padding-left: 45px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    box-shadow: none;
+
+    .help__item-title {
+      @include max-width(288px);
+      font-weight: normal;
+      margin-bottom: 15px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: url('/src/img/help-confeti.png');
+        left: 396px;
+        top: 127px;
+      }
+
+      &::after {
+        position: absolute;
+        content: url('/src/img/help-img.png');
+        left: 242px;
+        top: -363px;
+      }
+
+      span {
+        font-size: 26px;
+        font-weight: 600;
+        color: $blue;
+      }
+    }
+    .help__item-text {
+      @include max-width(288px);
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.help__item-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    top: -16px;
+    transform: translateX(-50%) translateY(-100%);
+  }
+}
+
+.help__item-text {
+  font-size: 16px;
+  margin-bottom: 0;
+}

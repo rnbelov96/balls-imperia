@@ -50,7 +50,8 @@
 
 .exp__item {
   min-height: 400px;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 13px 53.58px 3.42px rgba(0, 0, 0, 0.14);
 
   &:nth-child(1) {
     background-repeat: no-repeat;
@@ -80,6 +81,18 @@
       padding-right: 10px;
       padding-bottom: 50px;
       padding-left: 29px;
+      background-image: url('/src/img/gallery/exp-bg/2-1.jpg');
+      position: relative;
+      overflow: hidden;
+      background-position-x: 0px;
+
+      &::before {
+        position: absolute;
+        z-index: 0;
+        content: url('/src/img/cloud.png');
+        bottom: -203px;
+        left: -247px;
+      }
 
       p {
         br {
@@ -99,6 +112,20 @@
     padding-bottom: 31px;
     padding-right: 10px;
     background-image: url('/src/img/gallery/exp-bg/3.png');
+
+    @media (max-width: 650px) {
+      background-position-x: -350px;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        position: absolute;
+        z-index: 0;
+        content: url('/src/img/cloud.png');
+        bottom: -195px;
+        left: -237px;
+      }
+    }
   }
 
   &:nth-child(4) {
@@ -120,4 +147,5 @@
   font-weight: 600;
   margin-bottom: 0;
   color: #fefefe;
+  position: relative;
 }

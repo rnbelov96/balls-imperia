@@ -87,6 +87,30 @@
   }
 }
 
+.balls__stats-ball-box-left {
+  position: relative;
+  left: 107px;
+  top: 489px;
+
+  @media (max-width: 1500px) {
+    left: 159px;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.balls__stats-ball-box-right {
+  position: relative;
+  right: -1615px;
+  top: 863px;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
 .ball {
   position: absolute;
 
