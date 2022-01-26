@@ -55,6 +55,7 @@
     right: -1431px;
     top: -308px;
     content: url('/src/img/desc-img.webp');
+    pointer-events: none;
 
     @media (max-width: 1150px) {
       right: -1233px;

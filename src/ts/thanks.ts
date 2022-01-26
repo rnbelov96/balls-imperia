@@ -1,5 +1,5 @@
 import '../scss/thanks.scss';
-// import './modals';
+import './modals';
 
 const userName = localStorage.getItem('userName');
 

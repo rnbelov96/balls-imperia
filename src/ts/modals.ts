@@ -5,14 +5,17 @@ const openedModalList: Element[] = [];
 
 const modalFormInfoList = [
   {
-    title: 'на бесплатную консультацию',
-    button: 'Получить консультацию',
+    button: 'Получить информацию',
   },
   {
-    title: 'на презентацию франшизы и финансовую модель',
-    button: 'Получить презентацию',
+    button: 'Получить расчет',
+  },
+  {
+    button: 'Получить поддержку',
   },
 ];
+
+const modalTitleElList = document.querySelectorAll('.modal-form__modal-title');
 
 const closeModal = (modalEl: HTMLDivElement) => {
   modalEl.style.opacity = '0';
@@ -24,7 +27,9 @@ const closeModal = (modalEl: HTMLDivElement) => {
 
 const openModal = (modalEl: HTMLDivElement) => {
   if (window.innerWidth > document.body.clientWidth) {
-    document.body.style.paddingRight = `${window.innerWidth - document.body.clientWidth}px`;
+    document.body.style.paddingRight = `${
+      window.innerWidth - document.body.clientWidth
+    }px`;
   }
   modalEl.style.opacity = '1';
   modalEl.style.overflowY = 'auto';
@@ -35,19 +40,17 @@ const openModal = (modalEl: HTMLDivElement) => {
 const modalElList = document.querySelectorAll('.modal');
 const [formModalEl, policyModalEl, youtubeModalEl] = modalElList;
 
-// Для каждого модального видео создать 2 таких переменных
-const youtubeModalWrapperEl = youtubeModalEl?.querySelector(
-  '.modal__center-wrapper',
-) as HTMLDivElement;
-let isYoutubeModalOpened = false;
-
-const formTitleEl = formModalEl.querySelector('.js-modal-form-title') as HTMLSpanElement;
-const formBtnEl = formModalEl.querySelector('.js-modal-form-btn') as HTMLButtonElement;
+const formBtnEl = formModalEl.querySelector(
+  '.js-modal-form-btn',
+) as HTMLButtonElement;
 
 const modalWrapperElList = document.querySelectorAll('.modal__center-wrapper');
 modalElList.forEach(modalEl => {
   modalEl.addEventListener('click', (e: Event) => {
-    if (e.target === e.currentTarget || [...modalWrapperElList].includes(e.target as Element)) {
+    if (
+      e.target === e.currentTarget
+      || [...modalWrapperElList].includes(e.target as Element)
+    ) {
       const clickedModal = e.currentTarget as HTMLDivElement;
       // Если модальных видео несколько, проверить каждое
       if (clickedModal === youtubeModalEl) {
@@ -82,8 +85,11 @@ policyBtnElList.forEach(el => {
 const callbackBtnElList = document.querySelectorAll('.js-callback');
 callbackBtnElList.forEach(btn => {
   btn.addEventListener('click', () => {
+    modalTitleElList.forEach(el => {
+      (el as HTMLHeadingElement).style.display = 'none';
+    });
     openedModalList.unshift(formModalEl);
-    formTitleEl.textContent = modalFormInfoList[0].title;
+    (modalTitleElList[0] as HTMLHeadingElement).style.display = 'block';
     formBtnEl.textContent = modalFormInfoList[0].button;
     openModal(formModalEl as HTMLDivElement);
   });
@@ -92,31 +98,38 @@ callbackBtnElList.forEach(btn => {
 const presentBtnElList = document.querySelectorAll('.js-present');
 presentBtnElList.forEach(btn => {
   btn.addEventListener('click', () => {
+    modalTitleElList.forEach(el => {
+      (el as HTMLHeadingElement).style.display = 'none';
+    });
     openedModalList.unshift(formModalEl);
-    formTitleEl.textContent = modalFormInfoList[1].title;
+    (modalTitleElList[0] as HTMLHeadingElement).style.display = 'block';
     formBtnEl.textContent = modalFormInfoList[1].button;
     openModal(formModalEl as HTMLDivElement);
   });
 });
 
-// Для каждого модального окна с видео прописать такой обработчик 
-const youtubeBtnCallEl = document.querySelector('.js-youtube');
-youtubeBtnCallEl?.addEventListener('click', () => {
-  if (!isYoutubeModalOpened) {
-    isYoutubeModalOpened = true;
-    youtubeModalWrapperEl.innerHTML = `
-      <iframe
-        class="modal__video"
-        width="1520"
-        height="855"
-        src="https://www.youtube.com/embed/2OEL4P1Rz04"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    `;
-  }
-  openedModalList.unshift(youtubeModalEl);
-  openModal(youtubeModalEl as HTMLDivElement);
+const calcBtnElList = document.querySelectorAll('.js-calc');
+calcBtnElList.forEach(btn => {
+  btn.addEventListener('click', () => {
+    modalTitleElList.forEach(el => {
+      (el as HTMLHeadingElement).style.display = 'none';
+    });
+    openedModalList.unshift(formModalEl);
+    (modalTitleElList[1] as HTMLHeadingElement).style.display = 'block';
+    formBtnEl.textContent = modalFormInfoList[1].button;
+    openModal(formModalEl as HTMLDivElement);
+  });
+});
+
+const helpBtnElList = document.querySelectorAll('.js-help');
+helpBtnElList.forEach(btn => {
+  btn.addEventListener('click', () => {
+    modalTitleElList.forEach(el => {
+      (el as HTMLHeadingElement).style.display = 'none';
+    });
+    openedModalList.unshift(formModalEl);
+    (modalTitleElList[2] as HTMLHeadingElement).style.display = 'block';
+    formBtnEl.textContent = modalFormInfoList[1].button;
+    openModal(formModalEl as HTMLDivElement);
+  });
 });

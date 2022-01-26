@@ -16,7 +16,7 @@ const validateForm = form => {
     phoneInputEl.classList.add('input-error');
     isOk = false;
   }
-  if (emailInputEl.value === '') {
+  if (emailInputEl && emailInputEl.value === '') {
     emailInputEl.classList.add('input-error');
     isOk = false;
   }
@@ -36,7 +36,7 @@ const validateForm = form => {
     isOk = false;
   }
 
-  if (emailInputEl.value !== '' && !validator.isEmail(emailInputEl.value)) {
+  if (emailInputEl && emailInputEl.value !== '' && !validator.isEmail(emailInputEl.value)) {
     emailInputEl.classList.add('input-error');
     isOk = false;
   }

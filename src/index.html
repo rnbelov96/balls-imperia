@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Франшиза «»</title>
+    <title>Франшиза «Империя шаров»</title>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js"
       integrity="sha512-vZEoK8xRncku4g5GANHh5zobUjeCMbZkSEahrADeAcRlk/1Ignf8sAKojkV4RZLkPw145+ILJFisI2pnjsPtGQ=="
@@ -94,7 +94,7 @@
               в месяц
             </li>
           </ul>
-          <button class="button button_desc">Получить информацию</button>
+          <button class="button button_desc js-present">Получить информацию</button>
         </div>
       </section>
 
@@ -894,7 +894,7 @@
                 </p>
               </div>
             </div>
-            <button class="button button_calc">Получить расчёт</button>
+            <button class="button button_calc js-calc">Получить расчёт</button>
           </div>
         </div>
       </section>
@@ -1143,7 +1143,7 @@
             <span>В каждом городе мы откроем только 1-го партнёра</span> <br />
             — успейте занять свой
           </p>
-          <button class="button button_franch">Занять город</button>
+          <button class="button button_franch js-help">Занять город</button>
         </div>
       </section>
 
@@ -1310,7 +1310,7 @@
               </div>
               <div class="modal-form__input-box modal-form__input-box_city">
                 <input
-                  type="email"
+                  type="text"
                   placeholder="Город"
                   name="city"
                   data-type="city"
@@ -1327,7 +1327,7 @@
                 />
               </div>
             </div>
-            <button class="button button_modal-form">Проверить гороод</button>
+            <button class="button button_modal-form">Проверить город</button>
             <p class="modal-form__policy">
               Я подтверждаю, что ознакомлен и даю согласие на обработку
               персональных данных на условиях и для целей, определяемых
@@ -1382,20 +1382,69 @@
 
     <div class="modal">
       <div class="modal__center-wrapper">
-        <form class="modal-form">
-          <h3 class="modal-form__title">
-            Оставьте заявку <span class="js-modal-form-title"></span>
+        <div class="modal-form__wrapper">
+          <h3 class="modal-form__modal-title modal-form__modal-title_present">
+            Получите доступ <br />
+            к презентации <br />
+            и финансовому плану <br />
+            франшизы
           </h3>
-          <button class="button button_modal-form js-modal-form-btn">
-            Получить документацию
-          </button>
+          <h3 class="modal-form__modal-title modal-form__modal-title_calc">
+            Получите более <br />
+            точный расчёт прибыли <br />
+            и инвестиций
+          </h3>
+          <h3 class="modal-form__modal-title modal-form__modal-title_help">
+            Пройдите все этапы <br />
+            при поддержке <br />
+            опытного партнёра
+          </h3>
+          <form class="modal-form modal-form_modal">
+            <div class="modal-form__input-container">
+              <div class="modal-form__input-box">
+                <input
+                  type="tel"
+                  placeholder="+7(___) ___ ____"
+                  name="phone"
+                  data-type="phone"
+                  class="modal-form__input"
+                />
+              </div>
+              <div class="modal-form__input-box">
+                <input
+                  type="email"
+                  placeholder="bestpartner@shar-cool.ru"
+                  name="email"
+                  data-type="email"
+                  class="modal-form__input"
+                />
+              </div>
+              <div class="modal-form__input-box">
+                <input
+                  type="text"
+                  placeholder="Марат Сабиров"
+                  name="name"
+                  data-type="name"
+                  class="modal-form__input"
+                />
+              </div>
+            </div>
+            <button class="button button_modal-form js-modal-form-btn">
+              Получить информацию
+            </button>
+            <p class="modal-form__policy">
+              Я подтверждаю, что ознакомлен и даю согласие на обработку
+              персональных данных на условиях и для целей, определяемых
+              <span class="js-policy"> Политикой конфиденциальности </span>
+            </p>
+          </form>
           <button
             data-modal-close=""
             class="modal__close"
             title="Закрыть"
             type="button"
           ></button>
-        </form>
+        </div>
       </div>
     </div>
     <div class="modal">

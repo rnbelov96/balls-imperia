@@ -7,7 +7,7 @@ const formsList = document.querySelectorAll('form');
 formsList.forEach(form => {
   const nameInputEl = form.querySelector('[data-type="name"]') as HTMLInputElement | null;
   const phoneInputEl = form.querySelector('[data-type="phone"]') as HTMLInputElement;
-  const emailInputEl = form.querySelector('[data-type="email"]') as HTMLInputElement;
+  const emailInputEl = form.querySelector('[data-type="email"]') as HTMLInputElement | null;
   const cityInputEl = form.querySelector('[data-type="city"]') as HTMLInputElement | null;
 
   let phoneMask: any;
@@ -39,6 +39,6 @@ formsList.forEach(form => {
 
   nameInputEl?.addEventListener('focus', onFocus);
   phoneInputEl.addEventListener('focus', onFocus);
-  emailInputEl.addEventListener('focus', onFocus);
+  emailInputEl?.addEventListener('focus', onFocus);
   cityInputEl?.addEventListener('focus', onFocus);
 });

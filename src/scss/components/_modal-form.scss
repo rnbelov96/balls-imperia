@@ -33,6 +33,17 @@
     margin-left: auto;
   }
 
+  &_modal {
+    padding: 0;
+    background-image: none;
+    box-shadow: none;
+    @include max-width(351px);
+
+    &::after {
+      content: none !important;
+    }
+  }
+
   &::after {
     position: absolute;
     z-index: -1;
@@ -122,6 +133,7 @@
 }
 
 .modal-form__input {
+  outline: none;
   font-size: 20px;
   width: 100%;
   border: none;
@@ -171,5 +183,94 @@
   span {
     color: $blue;
     text-decoration: underline;
+  }
+}
+
+.modal-form__wrapper {
+  @include max-width(944px);
+  width: 98%;
+  border-radius: 15px;
+  box-shadow: -0.4px 21px 30.1px 1.9px rgba(0, 0, 0, 0.28);
+  background-color: white;
+  position: relative;
+  display: inline-flex;
+  justify-content: space-between;
+  padding-left: 70px;
+  padding-right: 50px;
+  padding-top: 70px;
+  padding-bottom: 55px;
+
+  @media (max-width: 950px) {
+    max-width: 475px;
+    flex-direction: column;
+    padding-top: 50px;
+  }
+
+  @media (max-width: 650px) {
+    max-width: 403px;
+    padding: 25px;
+  }
+
+  &::before {
+    z-index: 1;
+    pointer-events: none;
+    width: calc(100% - 18px);
+    height: calc(100% - 14px);
+    @include central-align;
+    position: absolute;
+    border-radius: 15px;
+    border: solid 2px #dedede;
+    content: '';
+  }
+}
+
+.modal-form__modal-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: left;
+  display: none;
+
+  @media (max-width: 950px) {
+    text-align: center;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 22px;
+  }
+
+  &_present {
+    &::after {
+      content: url('/src/img/gallery/modals/1.png');
+      position: absolute;
+      bottom: -60px;
+      left: -68px;
+      @media (max-width: 950px) {
+        content: none;
+      }
+    }
+  }
+  &_calc {
+    &::after {
+      content: url('/src/img/gallery/modals/2.png');
+      position: absolute;
+      bottom: -86px;
+      left: -120px;
+      @media (max-width: 950px) {
+        content: none;
+      }
+    }
+  }
+  &_help {
+    &::after {
+      content: url('/src/img/gallery/modals/3.png');
+      position: absolute;
+      bottom: -51px;
+      left: 4px;
+      @media (max-width: 950px) {
+        content: none;
+      }
+    }
   }
 }
