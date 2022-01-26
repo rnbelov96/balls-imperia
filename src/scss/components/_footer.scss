@@ -1,0 +1,141 @@
+.footer {
+  padding-bottom: 30px;
+  background-color: white;
+
+  @media (max-width: 1150px) {
+    padding-top: 20px;
+  }
+
+  @media (max-width: 650px) {
+    padding-bottom: 20px;
+  }
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  @media (max-width: 870px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer__data {
+  font-size: 13px;
+  margin-bottom: 8px;
+
+  @media (max-width: 650px) {
+    font-size: 13px !important;
+  }
+}
+
+.footer__address {
+  font-size: 13px;
+  margin-bottom: 0;
+  padding-left: 33px;
+  position: relative;
+
+  &::before {
+    width: 28px;
+    height: 29px;
+    content: '';
+    @include bg;
+    background-image: url('/src/img/icons/gerb.png');
+    position: absolute;
+    left: 0px;
+    @include y-align;
+  }
+}
+
+.footer__links-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer__insta {
+  width: 28px;
+  height: 28px;
+  @include bg;
+  background-image: url('/src/img/icons/insta.png');
+}
+
+.footer__policy {
+  @include reset-btn;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.footer__right-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 11px;
+
+  @media (max-width: 870px) {
+    align-items: center;
+  }
+}
+
+.footer__contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-left: 24px;
+
+  &::before {
+    content: '';
+    width: 18px;
+    height: 20px;
+    @include bg;
+    background-size: contain;
+    background-image: url('/src/img/icons/phone.png');
+    @include y-align;
+    left: 0px;
+    position: absolute;
+  }
+}
+
+.footer__phone {
+  @include reset-link(black);
+  font-size: 18px;
+  font-weight: 800;
+  color: black;
+
+  @media (max-width: 650px) {
+    font-size: 16px;
+  }
+}
+
+.footer__callback {
+  @include reset-btn;
+  @include reset-link(black);
+  text-align: center;
+  color: black;
+  font-size: 15px;
+
+  @media (max-width: 650px) {
+    font-size: 14px;
+  }
+}
+
+.footer__f5 {
+  @include reset-link(black);
+  color: black;
+  font-size: 13px;
+  padding-left: 35px;
+  position: relative;
+
+  &::before {
+    content: url('/src/img/icons/f5.svg');
+    position: absolute;
+    left: 0px;
+    top: 4px;
+  }
+}
