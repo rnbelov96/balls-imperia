@@ -1,0 +1,89 @@
+.money {
+  @include bg;
+  min-height: 1172px;
+  padding-top: 50px;
+  padding-bottom: 110px;
+  background-color: #e1e1e1;
+  background-image: url('/src/img/bgs/money-bg.jpg');
+
+  @media (max-width: 1150px) {
+    background-position-x: -340px;
+    background-position-y: 71px;
+  }
+
+  @media (max-width: 800px) {
+    background-position-x: -400px;
+  }
+
+  @media (max-width: 650px) {
+    min-height: auto;
+    padding-bottom: 50px;
+    padding-top: 30px;
+  }
+}
+
+.money__title {
+  width: 104%;
+  position: relative;
+  @include x-align;
+  font-size: 42px;
+  line-height: 1.43;
+  font-weight: 500;
+  letter-spacing: 1.26px;
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  font-family: 'Cormorant';
+
+  @media (max-width: 650px) {
+    margin-bottom: 20px;
+  }
+
+  span {
+    background-color: #f92056;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+
+    &:nth-child(5) {
+      margin-top: 3px;
+    }
+  }
+
+  b {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fed3ed;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #2e2e2e;
+
+    @media (max-width: 650px) {
+      font-size: 19px !important;
+    }
+  }
+}
+
+.money__text {
+  @include max-width(1086px);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 63px;
+  position: relative;
+
+  &::before {
+    content: url('/src/img/money-confeti.png');
+    z-index: -1;
+    position: absolute;
+    left: -400px;
+    top: -348px;
+
+    @media (max-width: 650px) {
+      content: none;
+    }
+  }
+
+  @include tablet-mb(45px);
+  @include mobile-mb(25px);
+}

@@ -1,6 +1,7 @@
 .help {
   padding-bottom: 55px;
   padding-top: 30px;
+  position: relative;
 }
 
 .help__title {
@@ -32,6 +33,10 @@
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+
+  @media (max-width: 650px) {
+    gap: 0px;
+  }
 }
 
 .help__item {
@@ -45,6 +50,10 @@
   padding-right: 22px;
   padding-bottom: 20px;
   padding-top: 200px;
+
+  @media (max-width: 650px) {
+    margin-bottom: 20px;
+  }
 
   @for $i from 1 through 7 {
     &:nth-child(#{$i}) .help__item-title::before {
@@ -60,6 +69,10 @@
     padding-bottom: 20px;
     box-shadow: none;
 
+    @media (max-width: 650px) {
+      padding-left: 25px;
+    }
+
     .help__item-title {
       @include max-width(288px);
       font-weight: normal;
@@ -71,6 +84,10 @@
         content: url('/src/img/help-confeti.png');
         left: 396px;
         top: 127px;
+
+        @media (max-width: 650px) {
+          content: none;
+        }
       }
 
       &::after {
@@ -78,6 +95,12 @@
         content: url('/src/img/help-img.png');
         left: 242px;
         top: -363px;
+
+        @media (max-width: 650px) {
+          left: -75px;
+          top: -599px;
+          zoom: 0.56;
+        }
       }
 
       span {
@@ -105,6 +128,10 @@
     left: 50%;
     top: -16px;
     transform: translateX(-50%) translateY(-100%);
+
+    @media (max-width: 650px) {
+      zoom: 0.8;
+    }
   }
 }
 

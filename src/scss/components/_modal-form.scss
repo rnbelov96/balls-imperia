@@ -29,6 +29,10 @@
     }
   }
 
+  &_money {
+    margin-left: auto;
+  }
+
   &::after {
     position: absolute;
     z-index: -1;
@@ -97,6 +101,18 @@
   @for $i from 1 through 3 {
     &:nth-child(#{$i})::before {
       background-image: url('/src/img/icons/form/#{$i}.png');
+    }
+  }
+
+  &_city {
+    &::before {
+      width: 40px;
+      left: 31px;
+      background-image: url('/src/img/icons/form/4.png') !important;
+
+      @media (max-width: 650px) {
+        left: 16px;
+      }
     }
   }
 

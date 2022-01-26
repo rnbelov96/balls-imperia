@@ -63,6 +63,34 @@
   }
 }
 
+.balls__help-ball-box {
+  position: relative;
+  left: 165px;
+  top: -24px;
+
+  @media (max-width: 1500px) {
+    left: 252px;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.balls__help-ball-box-right {
+  position: relative;
+  right: -1615px;
+  top: 523px;
+
+  @media (max-width: 1500px) {
+    right: -1553px;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
 .balls__desc-ball-box-left {
   position: relative;
   left: 107px;
