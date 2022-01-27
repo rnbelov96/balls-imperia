@@ -3,6 +3,7 @@
   background-image: url('/src/img/bgs/slider-bg.jpg');
   background-position-y: bottom;
   padding-top: 83px;
+  position: relative;
 
   @media (max-width: 991px) {
     padding-top: 50px;

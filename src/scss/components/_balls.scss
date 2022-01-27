@@ -4,34 +4,38 @@
   position: absolute;
   @include x-align;
   top: 0px;
-  z-index: 2;
+  z-index: 1;
 }
 
-.balls__income-ball-box-left {
+.balls__desc-ball-box-left {
   position: relative;
-  left: 208px;
-  top: -2103px;
+  left: 107px;
+  top: 450px;
 
   @media (max-width: 1500px) {
-    left: 244px;
+    left: 159px;
   }
 
   @media (max-width: 1200px) {
-    display: none;
+    left: 377px;
+  }
+
+  @media (max-width: 650px) {
+    left: 640px;
   }
 }
 
-.balls__income-ball-box-right {
+.balls__desc-ball-box-right {
   position: relative;
   right: -1615px;
-  top: -1585px;
-
-  @media (max-width: 1500px) {
-    right: -1553px;
-  }
+  top: -200px;
 
   @media (max-width: 1200px) {
-    display: none;
+    right: -1447px;
+  }
+
+  @media (max-width: 650px) {
+    right: -1159px;
   }
 }
 
@@ -45,7 +49,11 @@
   }
 
   @media (max-width: 1200px) {
-    display: none;
+    left: 358px;
+  }
+
+  @media (max-width: 650px) {
+    left: 684px;
   }
 }
 
@@ -59,59 +67,61 @@
   }
 
   @media (max-width: 1200px) {
-    display: none;
+    right: -1328px;
+  }
+
+  @media (max-width: 650px) {
+    right: -1121px;
   }
 }
 
-.balls__help-ball-box {
-  position: relative;
-  left: 165px;
-  top: -24px;
-
-  @media (max-width: 1500px) {
-    left: 252px;
-  }
-
-  @media (max-width: 1200px) {
-    display: none;
-  }
-}
-
-.balls__help-ball-box-right {
-  position: relative;
-  right: -1615px;
-  top: 523px;
-
-  @media (max-width: 1500px) {
-    right: -1553px;
-  }
-
-  @media (max-width: 1200px) {
-    display: none;
-  }
-}
-
-.balls__desc-ball-box-left {
+.balls__slider-ball-box-left {
   position: relative;
   left: 107px;
-  top: 450px;
+  top: -420px;
 
   @media (max-width: 1500px) {
     left: 159px;
   }
 
   @media (max-width: 1200px) {
-    display: none;
+    left: 377px;
+  }
+
+  @media (max-width: 650px) {
+    left: 640px;
   }
 }
 
-.balls__desc-ball-box-right {
+.balls__slider-ball-box-right {
   position: relative;
   right: -1615px;
-  top: -200px;
+  top: -30px;
 
   @media (max-width: 1200px) {
-    display: none;
+    right: -1447px;
+  }
+
+  @media (max-width: 650px) {
+    right: -1159px;
+  }
+}
+
+.balls__income-ball-box-left {
+  position: relative;
+  left: 208px;
+  top: 90px;
+
+  @media (max-width: 1500px) {
+    left: 244px;
+  }
+
+  @media (max-width: 1200px) {
+    left: 358px;
+  }
+
+  @media (max-width: 650px) {
+    left: 684px;
   }
 }
 
@@ -125,7 +135,11 @@
   }
 
   @media (max-width: 1200px) {
-    display: none;
+    left: 377px;
+  }
+
+  @media (max-width: 650px) {
+    left: 640px;
   }
 }
 
@@ -135,15 +149,73 @@
   top: 863px;
 
   @media (max-width: 1200px) {
-    display: none;
+    right: -1447px;
+  }
+
+  @media (max-width: 650px) {
+    right: -1159px;
+  }
+}
+
+.balls__income-ball-box-right {
+  position: relative;
+  right: -1615px;
+  top: 325px;
+
+  @media (max-width: 1500px) {
+    right: -1553px;
+  }
+
+  @media (max-width: 1200px) {
+    right: -1328px;
+  }
+
+  @media (max-width: 650px) {
+    right: -1121px;
+  }
+}
+
+.balls__help-ball-box {
+  position: relative;
+  left: 165px;
+  top: 178px;
+
+  @media (max-width: 1500px) {
+    left: 252px;
+  }
+
+  @media (max-width: 1200px) {
+    left: 377px;
+  }
+
+  @media (max-width: 650px) {
+    left: 640px;
+  }
+}
+
+.balls__help-ball-box-right {
+  position: relative;
+  right: -1615px;
+  top: 754px;
+
+  @media (max-width: 1500px) {
+    right: -1553px;
+  }
+
+  @media (max-width: 1200px) {
+    right: -1447px;
+  }
+
+  @media (max-width: 650px) {
+    right: -1159px;
   }
 }
 
 .ball {
   position: absolute;
 
-  @media (max-width: 1200px) {
-    display: none;
+  @media (max-width: 650px) {
+    zoom: 0.7;
   }
 
   &_red-left-1 {
