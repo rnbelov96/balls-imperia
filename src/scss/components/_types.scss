@@ -3,7 +3,7 @@
   padding-bottom: 90px;
 
   @media (max-width: 991px) {
-  padding-bottom: 50px;
+    padding-bottom: 50px;
   }
 
   @media (max-width: 800px) {
@@ -43,12 +43,23 @@
     }
 
     @media (max-width: 800px) {
-      content: none;
+      position: relative;
+      display: block;
+      right: 0;
+      top: 0;
+      zoom: 0.7;
+      margin-top: 10px;
+
+      @media (max-width: 650px) {
+        zoom: 0.3;
+      }
     }
   }
 
-  @include tablet-mb(60px);
-  @include mobile-mb(20px);
+  @media (max-width: 800px) {
+    margin-bottom: 0;
+  }
+
 }
 
 .types__text {

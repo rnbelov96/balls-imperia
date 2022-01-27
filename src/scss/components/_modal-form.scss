@@ -16,7 +16,12 @@
 
   &_part {
     margin-left: auto;
-    &::before {
+
+    @media (max-width: 650px) {
+    margin-bottom: 255px;
+    }
+
+    &::after {
       z-index: -1;
       content: url('/src/img/part-img.png');
       left: -746px;
@@ -24,7 +29,9 @@
       position: absolute;
 
       @media (max-width: 650px) {
-        content: none;
+        left: -170px;
+        top: 1290px;
+        zoom: 0.5;
       }
     }
   }
@@ -39,12 +46,12 @@
     box-shadow: none;
     @include max-width(351px);
 
-    &::after {
+    &::before {
       content: none !important;
     }
   }
 
-  &::after {
+  &::before {
     position: absolute;
     z-index: -1;
     width: calc(100% + 20px);
@@ -244,7 +251,7 @@
     &::after {
       content: url('/src/img/gallery/modals/1.png');
       position: absolute;
-      bottom: -60px;
+      bottom: -86px;
       left: -68px;
       @media (max-width: 950px) {
         content: none;

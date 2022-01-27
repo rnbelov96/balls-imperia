@@ -161,6 +161,11 @@
   margin-bottom: 0;
   position: relative;
   z-index: 2;
+  width: 350px;
+
+  @media (max-width: 650px) {
+    width: auto;
+  }
 
   &::before {
     content: url('/src/img/calc-result-bg.png');

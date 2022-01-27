@@ -10,6 +10,8 @@
 
   @media (max-width: 650px) {
     padding-top: 30px;
+    background-image: none;
+    background-color: #edefee;
   }
 
   &__slider-box {
@@ -31,6 +33,10 @@
     opacity: 0.85;
     position: absolute;
     @include central-align;
+
+    @media (max-width: 650px) {
+      opacity: 0;
+    }
   }
 
   &__img-box {
