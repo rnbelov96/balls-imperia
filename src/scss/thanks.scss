@@ -190,11 +190,12 @@
 }
 
 .thanks__slogan {
-  @include max-width(882px);
+  @include max-width(774px);
   font-size: 26px;
   font-weight: bold;
   letter-spacing: 0.65px;
-  margin-bottom: 13px;
+  margin-top: 15px;
+  margin-bottom: 0;
   color: #d68d9f;
 }
 

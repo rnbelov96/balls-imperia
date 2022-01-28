@@ -1,4 +1,5 @@
 .footer {
+  padding-top: 30px;
   padding-bottom: 30px;
   background-color: white;
 
@@ -20,6 +21,10 @@
   @media (max-width: 870px) {
     flex-direction: column;
     align-items: center;
+
+    &_thanks {
+      align-items: flex-start;
+    }
   }
 }
 
@@ -89,6 +94,12 @@
   position: relative;
   padding-left: 24px;
 
+  &:hover {
+    &::before {
+      transform: translateY(-50%) rotate(33deg);
+    }
+  }
+
   &::before {
     content: '';
     width: 18px;
@@ -99,6 +110,7 @@
     @include y-align;
     left: 0px;
     position: absolute;
+    transition: transform 0.5s
   }
 }
 
