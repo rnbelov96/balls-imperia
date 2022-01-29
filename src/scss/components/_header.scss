@@ -4,6 +4,18 @@
   z-index: 1;
 
   &_thanks {
+    padding-bottom: 11px;
+
+    .header__content {
+      align-items: center;
+    }
+
+    .header__callback {
+      @media (max-width: 650px) {
+        font-size: 12px;
+      }
+    }
+
     &::before {
       content: url('/src/img/thanks-confeti-left.png');
       position: absolute;
