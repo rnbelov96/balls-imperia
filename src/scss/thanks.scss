@@ -46,15 +46,14 @@
   flex: 1 0 auto;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-image: url('/src/img/bgs/thanks-bg.png');
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: bottom left;
+  background-image: linear-gradient(
+    90deg,
+    rgb(254, 209, 227) 0%,
+    rgb(206, 237, 254) 100%
+  );
   overflow: hidden;
-
-  @media (max-width: 1700px) {
-    background-image: none;
-  }
+  position: relative;
+  z-index: 0;
 
   @media (max-width: 650px) {
     padding-bottom: 50px;
@@ -74,18 +73,6 @@
   margin-bottom: 32px;
   font-family: 'Cormorant';
   position: relative;
-
-  &::before {
-    position: absolute;
-    content: url('/src/img/thanks-confeti.png');
-    left: -390px;
-    top: -278px;
-    z-index: -1;
-
-    @media (max-width: 1250px) {
-      content: none;
-    }
-  }
 
   @media (max-width: 720px) {
     font-size: 32px;
@@ -197,6 +184,18 @@
   margin-top: 15px;
   margin-bottom: 0;
   color: #d68d9f;
+  position: relative;
+
+  &::before {
+    content: url('/src/img/thanks-shape.png');
+    left: -690px;
+    top: -126px;
+    position: absolute;
+
+    @media (max-width: 1200px) {
+      content: none;
+    }
+  }
 }
 
 .thanks__social-title {
@@ -261,12 +260,12 @@
 
 .thanks__owner-box {
   position: absolute;
-  right: -499px;
-  top: -43px;
+  right: -323px;
+  top: 7px;
   z-index: -3;
 
   @media (max-width: 1250px) {
-    right: -449px;
+    right: -152px;
   }
 
   @media (max-width: 1150px) {
@@ -274,6 +273,7 @@
     right: 0;
     top: 0;
     position: relative;
+    margin-bottom: 45px;
   }
 }
 
@@ -283,16 +283,18 @@
   font-style: italic;
   margin-bottom: 0;
   position: absolute;
-  bottom: -17px;
-  left: 74px;
+  bottom: 22px;
+  left: -109px;
 
-  @media (max-width: 1150px) {
-    bottom: 0;
-    left: 40px;
+  @media (max-width: 1250px) {
+    position: absolute;
+    bottom: -62px;
+    left: 139px;
   }
 
   @media (max-width: 650px) {
-    bottom: -42px;
+    bottom: -71px;
+    left: 21px;
   }
   span {
     font-weight: 300;

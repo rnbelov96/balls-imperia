@@ -1,6 +1,31 @@
 .header {
   padding-top: 11px;
   position: relative;
+  z-index: 1;
+
+  &_thanks {
+    &::before {
+      content: url('/src/img/thanks-confeti-left.png');
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      pointer-events: none;
+      @media (max-width: 1440px) {
+        content: none;
+      }
+    }
+
+    &::after {
+      content: url('/src/img/thanks-confeti-right.png');
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      pointer-events: none;
+      @media (max-width: 1440px) {
+        content: none;
+      }
+    }
+  }
 }
 
 .header__logo {
@@ -56,7 +81,7 @@
     @include y-align;
     left: 0px;
     position: absolute;
-    transition: transform 0.5s
+    transition: transform 0.5s;
   }
 }
 
