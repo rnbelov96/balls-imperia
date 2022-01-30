@@ -60,6 +60,15 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+
+  @media (max-width: 870px) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media (max-width: 650px) {
+    align-self: flex-start;
+  }
 }
 
 .footer__insta {
@@ -110,7 +119,7 @@
     @include y-align;
     left: 0px;
     position: absolute;
-    transition: transform 0.5s
+    transition: transform 0.5s;
   }
 }
 
