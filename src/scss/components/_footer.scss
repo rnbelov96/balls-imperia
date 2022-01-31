@@ -94,6 +94,12 @@
   @media (max-width: 870px) {
     align-items: center;
   }
+
+  &_thanks {
+    @media (max-width: 650px) {
+      align-self: center;
+    }
+  }
 }
 
 .footer__contact-box {
@@ -158,5 +164,13 @@
     position: absolute;
     left: 0px;
     top: 4px;
+  }
+}
+
+.footer__logo {
+  &_thanks {
+    @media (max-width: 650px) {
+      align-self: center;
+    }
   }
 }
