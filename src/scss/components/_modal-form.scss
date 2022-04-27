@@ -122,6 +122,10 @@
     }
   }
 
+  &:nth-child(4)::before {
+    background-image: url('/src/img/icons/form/3.png');
+  }
+
   &_city {
     &::before {
       width: 40px;

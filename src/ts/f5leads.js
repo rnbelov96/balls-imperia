@@ -8,7 +8,7 @@ const validateForm = form => {
 
   let isOk = true;
 
-  if (nameInputEl && nameInputEl.value === '') {
+  if (nameInputEl && !nameInputEl.hidden && nameInputEl.value === '') {
     nameInputEl.classList.add('input-error');
     isOk = false;
   }
@@ -20,7 +20,7 @@ const validateForm = form => {
     emailInputEl.classList.add('input-error');
     isOk = false;
   }
-  if (cityInputEl && cityInputEl.value === '') {
+  if (cityInputEl && !cityInputEl.hidden && cityInputEl.value === '') {
     cityInputEl.classList.add('input-error');
     isOk = false;
   }

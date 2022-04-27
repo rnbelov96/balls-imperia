@@ -13,9 +13,15 @@ const modalFormInfoList = [
   {
     button: 'Получить поддержку',
   },
+  {
+    button: 'Проверить город',
+  },
 ];
 
 const modalTitleElList = document.querySelectorAll('.modal-form__modal-title');
+
+const cityModalInputElList = document.querySelectorAll('.js-city-modal-input');
+const nameModalInputElList = document.querySelectorAll('.js-name-modal-input');
 
 const closeModal = (modalEl: HTMLDivElement) => {
   modalEl.style.opacity = '0';
@@ -48,8 +54,8 @@ const modalWrapperElList = document.querySelectorAll('.modal__center-wrapper');
 modalElList.forEach(modalEl => {
   modalEl.addEventListener('click', (e: Event) => {
     if (
-      e.target === e.currentTarget
-      || [...modalWrapperElList].includes(e.target as Element)
+      e.target === e.currentTarget ||
+      [...modalWrapperElList].includes(e.target as Element)
     ) {
       const clickedModal = e.currentTarget as HTMLDivElement;
       // Если модальных видео несколько, проверить каждое
@@ -88,6 +94,12 @@ callbackBtnElList.forEach(btn => {
     modalTitleElList.forEach(el => {
       (el as HTMLHeadingElement).style.display = 'none';
     });
+    nameModalInputElList.forEach(nameModalInputEl => {
+      (nameModalInputEl as HTMLInputElement).hidden = false;
+    });
+    cityModalInputElList.forEach(cityModalInputEl => {
+      (cityModalInputEl as HTMLInputElement).hidden = true;
+    });
     openedModalList.unshift(formModalEl);
     (modalTitleElList[0] as HTMLHeadingElement).style.display = 'block';
     formBtnEl.textContent = modalFormInfoList[0].button;
@@ -100,6 +112,12 @@ presentBtnElList.forEach(btn => {
   btn.addEventListener('click', () => {
     modalTitleElList.forEach(el => {
       (el as HTMLHeadingElement).style.display = 'none';
+    });
+    nameModalInputElList.forEach(nameModalInputEl => {
+      (nameModalInputEl as HTMLInputElement).hidden = false;
+    });
+    cityModalInputElList.forEach(cityModalInputEl => {
+      (cityModalInputEl as HTMLInputElement).hidden = true;
     });
     openedModalList.unshift(formModalEl);
     (modalTitleElList[0] as HTMLHeadingElement).style.display = 'block';
@@ -114,6 +132,12 @@ calcBtnElList.forEach(btn => {
     modalTitleElList.forEach(el => {
       (el as HTMLHeadingElement).style.display = 'none';
     });
+    nameModalInputElList.forEach(nameModalInputEl => {
+      (nameModalInputEl as HTMLInputElement).hidden = false;
+    });
+    cityModalInputElList.forEach(cityModalInputEl => {
+      (cityModalInputEl as HTMLInputElement).hidden = true;
+    });
     openedModalList.unshift(formModalEl);
     (modalTitleElList[1] as HTMLHeadingElement).style.display = 'block';
     formBtnEl.textContent = modalFormInfoList[1].button;
@@ -127,9 +151,15 @@ helpBtnElList.forEach(btn => {
     modalTitleElList.forEach(el => {
       (el as HTMLHeadingElement).style.display = 'none';
     });
+    nameModalInputElList.forEach(nameModalInputEl => {
+      (nameModalInputEl as HTMLInputElement).hidden = true;
+    });
+    cityModalInputElList.forEach(cityModalInputEl => {
+      (cityModalInputEl as HTMLInputElement).hidden = false;
+    });
     openedModalList.unshift(formModalEl);
     (modalTitleElList[2] as HTMLHeadingElement).style.display = 'block';
-    formBtnEl.textContent = modalFormInfoList[1].button;
+    formBtnEl.textContent = modalFormInfoList[3].button;
     openModal(formModalEl as HTMLDivElement);
   });
 });
